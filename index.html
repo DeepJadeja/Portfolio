@@ -1,0 +1,112 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Chandradeepsinh Jadeja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#ffffff;--fg:#0d0d0d;--muted:#5f5f5f;--rule:#0d0d0d;--accent:#2f6bff;--accent-ink:#ffffff;
+    --f-disp:"Archivo",system-ui,sans-serif;--f-body:"Hanken Grotesk",system-ui,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,monospace;--bw:2px;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--fg:#f2f2ee;--muted:#9a9a95;--rule:#f2f2ee;color-scheme:dark}}
+  :root[data-theme="dark"]{--bg:#0d0d0d;--fg:#f2f2ee;--muted:#9a9a95;--rule:#f2f2ee;color-scheme:dark}
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:1.0625rem;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--bg)}
+  a{color:inherit;text-decoration:none}
+  h1,h2{font-family:var(--f-disp);margin:0;line-height:.96;letter-spacing:-.02em}
+  p{margin:0}
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+  .wrap{max-width:1280px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .marq{border-block:var(--bw) solid var(--rule);overflow:hidden;white-space:nowrap;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding-block:.5rem;background:var(--bg)}
+  .marq.top{border-top:0}
+  .marq .run{display:inline-block;animation:marq 28s linear infinite}
+  .marq.rev .run{animation-direction:reverse}
+  .marq .run span{padding:0 1.2rem}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .tgl{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:14px;z-index:95;border:var(--bw) solid var(--rule);background:var(--bg);color:var(--fg);width:38px;height:34px;cursor:pointer;font-size:1rem}
+  .tgl:hover{background:var(--accent);color:var(--accent-ink)}
+
+  .grid{display:grid;gap:0;grid-template-columns:repeat(3,1fr);
+    grid-template-areas:"name name work" "about accent work" "about skills connect";min-height:calc(100svh - 76px)}
+  @supports not (min-height:100svh){.grid{min-height:calc(100vh - 76px)}}
+  .cell{border-right:var(--bw) solid var(--rule);border-bottom:var(--bw) solid var(--rule);padding:clamp(1.1rem,2.6vw,2rem);display:flex;flex-direction:column;justify-content:flex-end;gap:.4rem;position:relative;transition:background .18s,color .18s;overflow:hidden}
+  .cell .hint{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .18s}
+  .cell .big{font-family:var(--f-disp);font-weight:900;letter-spacing:-.03em;font-size:clamp(2rem,5.5vw,4.4rem);line-height:.9}
+  a.cell:hover{background:var(--fg);color:var(--bg)}
+  a.cell:hover .hint{color:var(--bg)}
+  a.cell:hover .arw{opacity:1;transform:none}
+  .cell .arw{position:absolute;top:clamp(1.1rem,2.6vw,2rem);right:clamp(1.1rem,2.6vw,2rem);font-family:var(--f-mono);opacity:0;transform:translateY(-4px);transition:all .18s}
+  .cell.name{grid-area:name;justify-content:center;align-items:center;text-align:center;border-left:0}
+  .cell.name .who{font-family:var(--f-disp);font-weight:900;font-size:clamp(2rem,6.4vw,5.4rem);letter-spacing:-.03em;line-height:.9}
+  .cell.name .role{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.9rem}
+  .cell.name .line{margin:.5rem auto 0;color:var(--muted);max-width:44ch}
+  .cell.work{grid-area:work}.cell.about{grid-area:about}.cell.skills{grid-area:skills}.cell.connect{grid-area:connect}
+  .cell.accent{grid-area:accent;background:var(--accent);color:var(--accent-ink);justify-content:center}
+  .cell.accent .hint{color:var(--accent-ink);opacity:.7}
+  .cell.accent .big{font-size:clamp(1.1rem,2.3vw,1.6rem);line-height:1.05}
+  a.cell.accent:hover{background:var(--accent-ink);color:var(--accent)}
+  a.cell.accent:hover .hint{color:var(--accent);opacity:.8}
+  .cell:nth-child(3n){border-right:0}
+  @media(max-width:780px){
+    .grid{grid-template-columns:1fr;grid-template-areas:"name" "work" "skills" "about" "connect" "accent";min-height:0}
+    .cell{border-right:0;min-height:30svh}.cell.name{min-height:46svh}
+  }
+  .grid.anim .cell{animation:cellIn .62s cubic-bezier(.2,.8,.2,1) both}
+  .grid.anim .cell:nth-child(1){animation-delay:0s}.grid.anim .cell:nth-child(2){animation-delay:.08s}
+  .grid.anim .cell:nth-child(3){animation-delay:.16s}.grid.anim .cell:nth-child(4){animation-delay:.24s}
+  .grid.anim .cell:nth-child(5){animation-delay:.32s}.grid.anim .cell:nth-child(6){animation-delay:.40s}
+  @keyframes cellIn{from{opacity:0;transform:scale(.94);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+  .cell::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .2s;background:repeating-linear-gradient(115deg,transparent 0 15px,color-mix(in srgb,var(--bg) 16%,transparent) 15px 17px);background-size:220% 100%}
+  a.cell:hover::after{opacity:1;animation:sheen 1.1s linear infinite}
+  @keyframes sheen{from{background-position:0 0}to{background-position:-220% 0}}
+  .cell.accent::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 40%,color-mix(in srgb,#fff 50%,transparent) 50%,transparent 60%);background-size:260% 100%;animation:sweep2 3.2s linear infinite;mix-blend-mode:overlay}
+  @keyframes sweep2{from{background-position:140% 0}to{background-position:-140% 0}}
+  footer{padding-block:1.8rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  footer a:hover{color:var(--fg)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<button class="tgl" id="tgl" aria-label="Switch theme" title="Switch theme">◐</button>
+<div class="marq top"><div class="run" id="m1"></div></div>
+
+<main>
+  <div class="wrap">
+  <div class="grid" id="grid">
+    <div class="cell name">
+      <div class="who">Chandradeepsinh Jadeja</div>
+      <div class="role">Product Manager · Technical Program Manager · Product Developer</div>
+      <p class="line">I turn messy operations problems into products that ship. Grad Dec 2026, Boston, open to relocate. Pick a block.</p>
+    </div>
+    <a class="cell work" href="work.html"><span class="arw">↗</span><span class="hint">experience + projects</span><span class="big">Work</span></a>
+    <a class="cell accent" href="connect.html"><span class="hint">Availability</span><span class="big">Open to 2027 roles</span></a>
+    <a class="cell about" href="about.html"><span class="arw">↗</span><span class="hint">the short story</span><span class="big">About</span></a>
+    <a class="cell skills" href="skills.html"><span class="arw">↗</span><span class="hint">tools + stack</span><span class="big">Skills</span></a>
+    <a class="cell connect" href="connect.html"><span class="arw">↗</span><span class="hint">say hello</span><span class="big">Connect</span></a>
+  </div>
+  </div>
+</main>
+
+<div class="marq rev"><div class="run" id="m2"></div></div>
+<footer class="wrap">
+  <span>© <span id="yr"></span> Chandradeepsinh Jadeja</span>
+  <span>Boston — open to relocate</span>
+</footer>
+
+<script>
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  (function(){var r=document.documentElement,b=document.getElementById('tgl');
+    function sd(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches}
+    var s=null;try{s=localStorage.getItem('deep-theme')}catch(e){}if(s)r.setAttribute('data-theme',s);
+    function cur(){var a=r.getAttribute('data-theme');return a?a:(sd()?'dark':'light')}
+    function p(){b.textContent=cur()==='dark'?'☀':'☾'}p();
+    b.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('deep-theme',n)}catch(e){}p()});
+  })();
+  (function(){var top="Chandradeepsinh (Jade) Jadeja — Product Manager — Technical Program Manager — Product Developer — Open to 2027 roles — ";
+    var bot="Product Management — Supply Chain — Data & Analytics — Operations — Program Management — Product Development — ";
+    function fill(el,txt){var one="";for(var i=0;i<6;i++)one+="<span>"+txt+"</span>";el.innerHTML=one+one}
+    fill(document.getElementById('m1'),top);fill(document.getElementById('m2'),bot);})();
+  (function(){if(reduce)return;var g=document.getElementById('grid');if(g)g.classList.add('anim')})();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
